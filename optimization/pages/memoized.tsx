@@ -1,23 +1,23 @@
 import Head from 'next/head'
 import styles from 'styles/Home.module.css'
-import ProductVoucherForm from 'components/ProductVoucherForm';
+import MemoizedProductVoucherForm from "components/MemoizedProductVoucherForm";
 import NavBar from "components/NavBar/NavBar";
 
-const Home = () => {
+const Memoized = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>No optimize example</title>
-        <meta name="description" content="No optimize component example" />
+        <title>Memoized example</title>
+        <meta name="description" content="Optimized component example" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <NavBar />
-        <ProductVoucherForm />
+        <MemoizedProductVoucherForm />
       </main>
     </div>
   )
 }
 
-export default Home
+export default Memoized

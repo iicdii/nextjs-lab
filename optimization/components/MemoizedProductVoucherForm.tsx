@@ -2,8 +2,8 @@ import {Formik, Form, FormikValues, FormikProps } from 'formik';
 import * as yup from 'yup';
 import { ProductVoucher } from 'types';
 import { Button, Space } from 'antd';
-import ProductTable from 'components/ProductTable';
-import FormInput from "components/FormInput";
+import MemoizedProductTable from 'components/MemoizedProductTable';
+import MemoizedFormInput from "components/MemoizedFormInput";
 
 const initialValues: ProductVoucher = {
   title: '',
@@ -27,7 +27,7 @@ const schema = yup.object({
   ).required().min(1),
 });
 
-function ProductVoucherForm() {
+function MemoizedProductVoucherForm() {
   return (
     <Formik
       initialValues={initialValues}
@@ -42,13 +42,13 @@ function ProductVoucherForm() {
         return (
           <Form className="ant-form ant-form-horizontal">
             <Space direction="vertical">
-              <FormInput
+              <MemoizedFormInput
                 name="title"
                 label="제목"
                 type="string"
                 required={true}
               />
-              <ProductTable
+              <MemoizedProductTable
                 prefix="products"
                 products={values.products}
               />
@@ -63,4 +63,4 @@ function ProductVoucherForm() {
   );
 }
 
-export default ProductVoucherForm;
+export default MemoizedProductVoucherForm;
