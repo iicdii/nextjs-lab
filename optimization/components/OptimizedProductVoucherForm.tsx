@@ -2,7 +2,7 @@ import {Formik, Form, FormikValues, FormikProps } from 'formik';
 import * as yup from 'yup';
 import { ProductVoucher } from 'types';
 import { Button, Space } from 'antd';
-import MemoizedProductTable from 'components/MemoizedProductTable';
+import OptimizedProductTable from 'components/OptimizedProductTable';
 import OptimizedFormInput from "components/OptimizedFormInput";
 
 const initialValues: ProductVoucher = {
@@ -48,7 +48,7 @@ function OptimizedProductVoucherForm() {
                 type="string"
                 required={true}
               />
-              <MemoizedProductTable
+              <OptimizedProductTable
                 prefix="products"
                 products={values.products}
               />
