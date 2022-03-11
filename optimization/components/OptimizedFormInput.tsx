@@ -4,14 +4,14 @@ import {FieldProps} from "formik/dist/Field";
 import MemoizedBasicField from "components/MemoizedBasicField";
 import {Input, InputNumber} from "antd";
 
-interface MemoizedFormInputProps {
+interface OptimizedFormInputProps {
   name: string;
   label?: string;
   type: 'string' | 'number';
   required: boolean;
 }
 
-function MemoizedFormInput({ name, label, type, required = false, }: MemoizedFormInputProps) {
+function OptimizedFormInput({ name, label, type, required = false, }: OptimizedFormInputProps) {
   return (
     <Field name={name}>
       {({field, form}: FieldProps) => {
@@ -54,4 +54,4 @@ function MemoizedFormInput({ name, label, type, required = false, }: MemoizedFor
   );
 }
 
-export default React.memo(MemoizedFormInput);
+export default OptimizedFormInput;

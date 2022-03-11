@@ -1,24 +1,24 @@
 import { Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { Product } from 'types';
-import MemoizedFormInput from "components/MemoizedFormInput";
+import OptimizedFormInput from "components/OptimizedFormInput";
 
-interface MemoizedProductsProps {
+interface OptimizedProductsProps {
   prefix: string;
   products: Product[];
 }
 
-function MemoizedProductTable({
+function OptimizedProductTable({
   prefix,
   products,
-}: MemoizedProductsProps) {
+}: OptimizedProductsProps) {
   const columns: ColumnsType<Product> = [
     {
       title: '제품명',
       dataIndex: 'name',
       key: 'name',
       render: (value, record, index) => (
-        <MemoizedFormInput
+        <OptimizedFormInput
           name={`${prefix}[${index}].name`}
           type="string"
           required={true}
@@ -36,7 +36,7 @@ function MemoizedProductTable({
       dataIndex: 'amount',
       key: 'amount',
       render: (value, record, index) => (
-        <MemoizedFormInput
+        <OptimizedFormInput
           name={`${prefix}[${index}].amount`}
           type="number"
           required={true}
@@ -48,7 +48,7 @@ function MemoizedProductTable({
       dataIndex: 'vat',
       key: 'vat',
       render: (value, record, index) => (
-        <MemoizedFormInput
+        <OptimizedFormInput
           name={`${prefix}[${index}].vat`}
           type="number"
           required={true}
@@ -67,4 +67,4 @@ function MemoizedProductTable({
   );
 }
 
-export default MemoizedProductTable;
+export default OptimizedProductTable;
