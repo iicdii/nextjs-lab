@@ -24,6 +24,7 @@ function MemoizedFormInput({ name, label, type, required = false, }: MemoizedFor
             required={required}
             error={getIn(errors, name, '')}
             touched={getIn(touched, name, false)}
+            style={{ }}
           >
             {(() => {
               switch (type) {
