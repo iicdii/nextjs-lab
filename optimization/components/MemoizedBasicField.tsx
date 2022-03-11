@@ -50,7 +50,7 @@ function MemoizedBasicField({
 export default React.memo(
   MemoizedBasicField,
   (prevProps, nextProps) => {
-    const { name } = nextProps;
+    const name = nextProps.name || prevProps.name;
     const prevError = getIn(prevProps.error, name);
     const nextError = getIn(nextProps.error, name);
 
